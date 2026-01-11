@@ -1,0 +1,11 @@
+<div class="cell-sep" (dragover)="dragOver($event)" (drop)="drop($event)">
+    <ng-container *ngFor="let cell of cellsType; let i = index">
+        <div *ngIf="cell.nb != 0">
+            <div class="cell-sep-cell">
+                <app-cell [cellSize]="cellSize" [image]="cell.cell.image[0]" [name]="cell.cell.name" [id]="{'I': i}"
+                    (cellDragId)="cellDragIdChild($event)" [isLocked]="false" />
+            </div>
+            <span class="cell-sep-cell-nb" *ngIf="cell.nb > 0">{{cell.nb}}</span>
+        </div>
+    </ng-container>
+</div>

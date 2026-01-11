@@ -1,0 +1,8 @@
+<div *ngIf="!isLocked" class="cell" [style]="'width: ' + cellSize + '; height: ' + cellSize + ';'"
+draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" >
+    <img class="cell-sprite" [src]="image" [alt]="name" />
+</div>
+
+<div *ngIf="isLocked" class="cell" [style]="'width: ' + cellSize + '; height: ' + cellSize + ';'" >
+    <img class="cell-sprite" [src]="image" [alt]="name" />
+</div>

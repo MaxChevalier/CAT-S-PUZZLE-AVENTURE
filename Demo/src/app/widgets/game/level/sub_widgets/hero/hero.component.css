@@ -1,0 +1,11 @@
+.hero{
+    width: calc(min(95vh, 95vw) / 15);
+    height: calc(min(95vh, 95vw) / 15);
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+}

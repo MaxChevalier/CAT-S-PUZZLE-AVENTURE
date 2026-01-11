@@ -1,0 +1,16 @@
+<div class="level">
+    <div class="level-sub">
+        <app-cell-selector [cellSize]="cellSize" [cellsType]="cellsType" (cellDragId)="setCellDrag($event)" (cellDrop)="stockTiles($event)"/>
+    </div>
+    <div class="level-map level-sub">
+        <app-hero [heroSpeed]="heroSpeed" [cellSize]="cellSize" [hidden]="!(this.mapComponent && this.mapComponent!.start != null)"/>
+        <app-map (getStart)="setStart($event)" [cellSize]="cellSize" [cellDrag]="cellDrag" [defaultCell]="defaultCell" (dropped)="setCellDrag($event)" [mapSize]="mapSize" [turns]="turns" [defaultLayout]="defaultLayout"/>
+    </div>
+    <div class="level-sub level-info">
+        <span>
+            {{turns}}
+        </span>
+        <button (click)="stopResolving()" *ngIf="(timeouts | json) != ({} | json)" id="Stop">Stop</button>
+        <button (click)="solve()" *ngIf="(timeouts | json) == ({} | json)" id="Solve">Solve</button>
+    </div>
+</div>
